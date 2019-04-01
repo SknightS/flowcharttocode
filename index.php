@@ -20,18 +20,53 @@
         <br><br>
         <div id="draggable2" class="ui-widget-content"> <span style="z-index: 100; position: absolute; margin-top: 20px; margin-left: 60px"" >click to write</span><img height="10%" width="40%" src="image/flowchart-parallel.png"></div>
         <br><br>
-        <div id="draggable3" class="ui-widget-content"> <span style="z-index: 100; position: absolute;margin-top: 40px; margin-left: 60px"">click to write</span><img height="10%" width="50%" src="image/flowchart-oval.png"></div>
+        <div id="draggable3" class="ui-widget-content"> <span style="z-index: 100; position: absolute;margin-top: 40px; margin-left: 60px"">click to write</span><img height="30%" width="50%" src="image/flowchart-oval.png"></div>
         <br><br>
-        <div id="draggable4" class="ui-widget-content"><span style="z-index: 100; position: absolute; margin-top: 40px; margin-left: 90px"">click to write</span> <img height="10%" width="60%" src="image/flowchart-circle.png"></div>
+        <div id="draggable4" class="ui-widget-content" style="margin-left: -60px"><span style="z-index: 100; position: absolute; margin-top: 40px; margin-left: 110px"">click to write</span> <img height="10%" width="60%" src="image/flowchart-circle.png"></div>
         <br><br>
         <div id="draggable5" class="ui-widget-content"> <span style="z-index: 100; position: absolute; margin-top: 40px; margin-left: 60px"">click to write</span><img height="10%" width="50%"  src="image/flowchart-diamond.png"></div>
         <br><br><br> <button style="background-color: lightgreen;width: 70%" class="btn btn-sucess">CONVERT</button>
 
     </div>
 
-    <div id="container" class=" col-md-5"  style="background-color:lavenderblush;overflow:scroll;  height: 1000px"></div>
+    <div id="container" class=" col-md-5"  style="background-color:lavenderblush;overflow:scroll;  height: 1000px">
 
-    <div class="col-md-4" style="background-color:lavender; height: 1000px">Result</div>
+       <div style="float: right"> <label>select Language </label><br>
+        <select>
+            <option>C</option>
+            <option>C++</option>
+            <option>JAVA</option>
+        </select>
+       </div>
+    </div>
+
+    <div class="col-md-4" style="background-color:lavender; height: 1000px">Result
+
+        <br><br>
+        <div style="font-weight: bold; margin-left: 20px">
+
+            #include <stdio.h>
+            <br><br><br>
+            int main()
+            <br><br>
+            {
+            <br><br>
+            int num1, num2, sum = 0, ;
+            <br><br>
+            scanf("%d", &num1;);
+            <br><br>
+            scanf("%d", &num2;);
+            <br><br>
+            sum = num1 + num2;
+            <br><br>
+            printf("%d\n", sum);
+            <br><br>
+            return 0;
+            <br><br>
+            }
+            <br><br>
+        </div>
+    </div>
   </div>
 </div>
 
