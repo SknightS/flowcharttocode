@@ -66,8 +66,8 @@
             data : {_token: CSRF_TOKEN,'jsondata':x} ,
             success : function(data){
             //   alert(data);
-            //console.log(data);
-            alert(data);
+            console.log(data);
+            //alert(data);
             }
             });
         }
@@ -302,7 +302,7 @@
                         nodeTemplateMap: myDiagram.nodeTemplateMap,  // share the templates used by myDiagram
                         model: new go.GraphLinksModel([  // specify the contents of the Palette
                             { category: "Start", text: "Start" },
-                            { text: "Step" },
+                            { category:"step" , text: "Step" },
                             { category: "Conditional", text: "???" },
                             { category: "End", text: "End" },
                             { category: "Comment", text: "Comment" }
