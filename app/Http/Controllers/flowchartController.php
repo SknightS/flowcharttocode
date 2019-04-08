@@ -13,20 +13,20 @@ class flowchartController extends Controller
 
         $jsondata = $r->jsondata;
 
-        //return $jsondata;
+       // return $jsondata;
         $json = json_decode($jsondata, true);
         $count= count($json['nodeDataArray']);
        // return $count;
-        foreach($json['nodeDataArray']['text'] as $stat => $value) {
-
-            return $value;
-        }
-        while ($count >0){
-
+//        foreach($json as $key => $value) {
+//            return $value->nodeDataArray;
+//        }
           // return $count;
-            return $json['nodeDataArray'][$count]['text'];
+           // return $json['nodeDataArray'][0]['text'];
 
+        foreach($json['nodeDataArray'] as $item) {
+            return $item['text'];
         }
+          //  return $json;
 
         //return $json['nodeDataArray'][0]['category'];
     }
