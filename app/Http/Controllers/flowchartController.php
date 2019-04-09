@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Nodedataarray;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -13,7 +14,7 @@ class flowchartController extends Controller
 
         $jsondata = $r->jsondata;
 
-        return $jsondata;
+       // return $jsondata;
         $json = json_decode($jsondata, true);
         $count= count($json['nodeDataArray']);
        // return $count;
@@ -24,7 +25,18 @@ class flowchartController extends Controller
            // return $json['nodeDataArray'][0]['text'];
 
         foreach($json['nodeDataArray'] as $item) {
-            return $item['text'];
+            //return $item['text'];
+        $nodedataarray = new Nodedataarray();
+       try{
+           $nodedataarray->category = $item['category'];
+           $nodedataarray->text = $item['text'];
+           $nodedataarray->keyto = $item['key'];
+           $nodedataarray->loc = $item['loc'];
+           $nodedataarray->save();
+
+       }
+       catch(\Exception $e){}
+
         }
           //  return $json;
 
