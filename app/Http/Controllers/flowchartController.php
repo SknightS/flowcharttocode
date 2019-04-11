@@ -15,9 +15,9 @@ class flowchartController extends Controller
 
         $jsondata = $r->jsondata;
 
-       // return $jsondata;
+        // return $jsondata;
         $json = json_decode($jsondata, true);
-        $json2 = json_decode($jsondata, true);
+       // $json2 = json_decode($jsondata, true);
       //  $count= count($json['nodeDataArray']);
        // return $count;
 //        foreach($json as $key => $value) {
@@ -42,58 +42,40 @@ class flowchartController extends Controller
 
         }
 
-//        foreach($json2['linkDataArray'] as $item2) {
-//
-//          //  return $item2['from'].$item2['to'];
-//
-//              $linkdataarray = new LinkDataArray();
-////              if (isset($item2['text'])) {
-////                   $linkdataarray->text = $item2['text'];
-////              }else
-//
-//              $linkdataarray->linkfrom = $item2['from'];
-//              $linkdataarray->linkto = $item2['to'];
-//              $linkdataarray->fromPort = $item2['fromPort'];
-//              $linkdataarray->toPort = $item2['toPort'];
-//             // $linkdataarray->text = $item2['text'];
-//              $linkdataarray->points = $item2['points'];
-//              $linkdataarray->save();
-//
-//
-//
-//
-//
-//
-//        }
-
-
-
         foreach($json['linkDataArray'] as $item) {
-            //return $item['text'];
-            $linkdataarray = new LinkDataArray();
+            //   return $item['text'];
+            try {
+                $linkdataarray = new LinkDataArray();
 
+                if (isset($item['text'])) {
+                    $linkdataarray->text = $item['text'];
+                } else
 
                 $linkdataarray->linkfrom = $item['from'];
                 $linkdataarray->linkto = $item['to'];
                 $linkdataarray->fromPort = $item['fromPort'];
                 $linkdataarray->toPort = $item['toPort'];
-                $linkdataarray->points = $item['points'];
+                $linkdataarray->userid = 1;
                 $linkdataarray->save();
 
-
-
-
+            }
+            catch (\Exception $e){}
         }
-
-
-
-
-
 
 
 
           //  return $json;
 
         //return $json['nodeDataArray'][0]['category'];
+    }
+
+    public function convert(){
+
+        $nodearradata = Nodedataarray::get();
+
+        foreach ($nodearradata as $node){
+            echo $node->category . "<br>";
+        }
+
     }
 }

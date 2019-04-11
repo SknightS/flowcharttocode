@@ -14,4 +14,5 @@
 Route::get('/', function () {
     return view('flowchart');
 });
-Route::post('/restaurants/takeout','flowchartController@index')->name('flowchart.insert');
+Route::post('/flowchart/insert','flowchartController@index')->name('flowchart.insert');
+Route::get('/convert','flowchartController@convert')->name('flowchart.convert');
