@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2019 at 08:21 PM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 7.1.7
+-- Generation Time: Apr 11, 2019 at 02:17 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.1.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,35 @@ SET time_zone = "+00:00";
 --
 -- Database: `flowchart`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `linkdataarray`
+--
+
+CREATE TABLE `linkdataarray` (
+  `id` int(11) NOT NULL,
+  `linkfrom` varchar(255) DEFAULT NULL,
+  `linkto` varchar(255) DEFAULT NULL,
+  `fromPort` varchar(255) DEFAULT NULL,
+  `toPort` varchar(255) DEFAULT NULL,
+  `text` varchar(255) DEFAULT NULL,
+  `points` varchar(255) DEFAULT NULL,
+  `userId` int(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `linkdataarray`
+--
+
+INSERT INTO `linkdataarray` (`id`, `linkfrom`, `linkto`, `fromPort`, `toPort`, `text`, `points`, `userId`) VALUES
+(1, '-1', '-2', 'B', 'T', NULL, NULL, 1),
+(4, '-2', '-3', 'B', 'T', NULL, NULL, 1),
+(7, '-3', '-4', 'B', 'T', NULL, NULL, 1),
+(11, '-4', '-6', 'R', 'L', NULL, NULL, 1),
+(16, '-4', '-5', 'L', 'R', NULL, NULL, 1),
+(36, NULL, '-5', 'L', 'R', 'NO', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -42,13 +71,28 @@ CREATE TABLE `nodedataarray` (
 --
 
 INSERT INTO `nodedataarray` (`id`, `category`, `text`, `keyto`, `loc`, `userId`) VALUES
-(1, 'Start', 'Start', -1, '-415 -311', NULL),
-(3, 'step', 'Step', -2, '-432 -228', NULL),
-(5, 'step', 'testp', -2, '-432 -228', NULL);
+(1, 'Start', 'Start', -1, '-353 -329', NULL),
+(3, 'step', 'Step', -2, '-356 -250', NULL),
+(5, 'step', 'Declare variable num1 , num2\n', -2, '-356 -250', NULL),
+(8, 'step', 'Step', -3, '-359 -140', NULL),
+(11, 'step', 'Read num1 and num2', -3, '-359 -140', NULL),
+(15, 'Conditional', '???', -4, '-362 -36', NULL),
+(19, 'Conditional', 'num1 > num2', -4, '-362 -36', NULL),
+(24, 'step', 'Step', -5, '-562 43', NULL),
+(30, 'step', 'Step', -6, '-93 26', NULL),
+(42, 'step', 'Display num1 is big', -6, '-93 26', NULL),
+(47, 'step', 'Display num2 is big ', -5, '-566 30', NULL);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `linkdataarray`
+--
+ALTER TABLE `linkdataarray`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `linkunique` (`linkfrom`,`linkto`) USING BTREE;
 
 --
 -- Indexes for table `nodedataarray`
@@ -62,10 +106,17 @@ ALTER TABLE `nodedataarray`
 --
 
 --
+-- AUTO_INCREMENT for table `linkdataarray`
+--
+ALTER TABLE `linkdataarray`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+--
 -- AUTO_INCREMENT for table `nodedataarray`
 --
 ALTER TABLE `nodedataarray`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

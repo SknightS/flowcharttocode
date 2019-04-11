@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4807721c-90d1-4f6d-ba5a-dc25579e3b0e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/GoJS/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/flowchartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/flowchartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/GoJS" beforeDir="false" afterPath="$PROJECT_DIR$/public/GoJS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/GoJS/samples/flowchart.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/GoJS/samples/flowchart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,14 +33,18 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="8" />
+<<<<<<< HEAD
           <entry key="project.open.time.1" value="4" />
+=======
+          <entry key="project.open.time.1" value="5" />
+>>>>>>> 3e6bda9f5b5bda7b4dbfac4f46ed326bc2248bd1
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -74,14 +75,14 @@
         <counts>
           <entry key="env" value="13" />
           <entry key="html" value="111" />
-          <entry key="php" value="930" />
+          <entry key="php" value="1144" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Blade" value="175" />
           <entry key="HTML" value="111" />
-          <entry key="PHP" value="755" />
+          <entry key="PHP" value="969" />
           <entry key="PLAIN_TEXT" value="13" />
         </counts>
       </usages-collector>
@@ -97,7 +98,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/flowchart.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7600">
+            <state relative-caret-position="6688">
               <caret line="304" column="45" selection-start-line="304" selection-start-column="45" selection-end-line="304" selection-end-column="45" />
             </state>
           </provider>
@@ -106,8 +107,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="16" column="71" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="87" />
+            <state relative-caret-position="176">
+              <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -115,8 +116,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/flowchartController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="83" selection-start-line="83" selection-end-line="83" />
+            <state relative-caret-position="418">
+              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
               <folding>
                 <element signature="e#40#62#0#PHP" expanded="true" />
               </folding>
@@ -127,7 +128,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/LinkDataArray.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
+            <state relative-caret-position="242">
               <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
             </state>
           </provider>
@@ -136,7 +137,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
+            <state relative-caret-position="242">
               <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
             </state>
           </provider>
@@ -155,7 +156,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Nodedataarray.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
+            <state relative-caret-position="242">
               <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
             </state>
           </provider>
@@ -179,11 +180,11 @@
         <option value="$PROJECT_DIR$/GoJS/samples/flowchart.html" />
         <option value="$PROJECT_DIR$/GoJS/release/go-module.js" />
         <option value="$PROJECT_DIR$/GoJS/release/go-debug.d.ts" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/flowchart.blade.php" />
         <option value="$PROJECT_DIR$/app/Nodedataarray.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/LinkDataArray.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/flowchartController.php" />
       </list>
     </option>
@@ -198,6 +199,7 @@
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/package.json" />
       <path value="$PROJECT_DIR$/public/GoJS/package.json" />
+      <path value="$PROJECT_DIR$/public/GoJS/projects/floorplannerTS/package.json" />
       <path value="$PROJECT_DIR$/public/GoJS/projects/maximalSource/package.json" />
       <path value="$PROJECT_DIR$/public/GoJS/projects/minimalSource/package.json" />
       <path value="$PROJECT_DIR$/public/GoJS/projects/minimalSourceBrowserify/package.json" />
@@ -329,6 +331,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -357,6 +360,11 @@
             <path>
               <item name="flowcharttocode" type="b2602c69:ProjectViewProjectNode" />
               <item name="flowcharttocode" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flowcharttocode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flowcharttocode" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -374,12 +382,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pmsNew" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -423,11 +430,17 @@
       <workItem from="1554741973866" duration="2402000" />
       <workItem from="1554824936142" duration="3608000" />
       <workItem from="1554908547684" duration="2578000" />
+<<<<<<< HEAD
       <workItem from="1554921272463" duration="4457000" />
+=======
+      <workItem from="1554921272463" duration="3992000" />
+      <workItem from="1554959743966" duration="5786000" />
+>>>>>>> 3e6bda9f5b5bda7b4dbfac4f46ed326bc2248bd1
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="35227000" />
   </component>
   <component name="TodoView">
@@ -438,11 +451,14 @@
       <are-packages-shown value="true" />
       <is-autoscroll-to-source value="true" />
     </todo-panel>
+=======
+    <option name="totallyTimeSpent" value="40548000" />
+>>>>>>> 3e6bda9f5b5bda7b4dbfac4f46ed326bc2248bd1
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19402985" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19616205" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -455,7 +471,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.21776815" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.21776815" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -480,23 +496,16 @@
     <entry file="file://$PROJECT_DIR$/GoJS/release/go-debug.js" />
     <entry file="file://$PROJECT_DIR$/GoJS/release/go.js" />
     <entry file="file://$PROJECT_DIR$/GoJS/samples/flowchart.html" />
-    <entry file="file://$PROJECT_DIR$/resources/views/flowchart.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/LinkDataArray.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7600">
-          <caret line="304" column="45" selection-start-line="304" selection-start-column="45" selection-end-line="304" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="16" column="71" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="87" />
+        <state relative-caret-position="242">
+          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
+        <state relative-caret-position="242">
           <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
         </state>
       </provider>
@@ -509,22 +518,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Nodedataarray.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
+        <state relative-caret-position="242">
           <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/LinkDataArray.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/flowchart.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        <state relative-caret-position="6688">
+          <caret line="304" column="45" selection-start-line="304" selection-start-column="45" selection-end-line="304" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/flowchartController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
+        <state relative-caret-position="418">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
           <folding>
             <element signature="e#40#62#0#PHP" expanded="true" />
           </folding>
