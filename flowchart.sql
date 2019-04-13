@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2019 at 02:17 PM
+-- Generation Time: Apr 13, 2019 at 02:03 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.1.20
 
@@ -21,6 +21,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `flowchart`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `converttext`
+--
+
+CREATE TABLE `converttext` (
+  `id` int(11) NOT NULL,
+  `text` varchar(255) DEFAULT NULL,
+  `userId` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `converttext`
+--
+
+INSERT INTO `converttext` (`id`, `text`, `userId`) VALUES
+(2, '$num1,$num2\n', NULL);
 
 -- --------------------------------------------------------
 
@@ -88,6 +107,12 @@ INSERT INTO `nodedataarray` (`id`, `category`, `text`, `keyto`, `loc`, `userId`)
 --
 
 --
+-- Indexes for table `converttext`
+--
+ALTER TABLE `converttext`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `linkdataarray`
 --
 ALTER TABLE `linkdataarray`
@@ -106,16 +131,22 @@ ALTER TABLE `nodedataarray`
 --
 
 --
+-- AUTO_INCREMENT for table `converttext`
+--
+ALTER TABLE `converttext`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
 -- AUTO_INCREMENT for table `linkdataarray`
 --
 ALTER TABLE `linkdataarray`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `nodedataarray`
 --
 ALTER TABLE `nodedataarray`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Converttext;
 use App\LinkDataArray;
 use App\Nodedataarray;
 use Illuminate\Http\Request;
@@ -90,14 +91,52 @@ class flowchartController extends Controller
 //        }
 
 
-        foreach ($nodearradata as $node){
+        foreach ($nodearradata as $node) {
 
-          //  echo $node->text;
-            if( strpos( $node->text , "Declare" ) !== false) {
-                echo $node->text;
+            $nodedata = $this->checklinkdata($node['keyto']);
+            echo $nodedata = json_decode($nodedata, true);
+
+             break;
+
+//            //  echo $node->text;
+
+//                if (strpos($node->text, "Declare") !== false) {
+//                    //  echo $node->text;
+//                    $text = explode(" ", $node->text);
+//                    $new = array();
+//                    $arr = array_diff($text, array("Declare", "variables", ",", "and", "variable"));
+//                    //print_r($arr);
+//                    foreach ($arr as $a) {
+//                        $c = "$" . $a;
+//                        array_push($new, $c);
+//                    }
+//
+//                    $string = implode(",", $new);
+//
+//                    $converttext = new Converttext();
+//                    $converttext->text = $string;
+//                   // $converttext->save();
+//
+//                    $linkdata = LinkDataArray::where('linkfrom', $node['keyto'])->get();
+//                    foreach ($linkdata as $l){
+//
+//
+//                    }
+//
+//                }
             }
-            }
+
+
             echo "<br>";
+        }
+
+
+        public function checklinkdata ($value){
+
+            $linkdata = LinkDataArray::where('linkfrom', $value)->get();
+           // $nodedata = Nodedataarray::where('keyto', $linkdata->linkto)->get();
+
+            return $linkdata;
         }
 
 
