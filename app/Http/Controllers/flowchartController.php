@@ -49,7 +49,11 @@ class flowchartController extends Controller
                 $linkdataarray = new LinkDataArray();
 
                 if (isset($item['text'])) {
-                    $linkdataarray->text = $item['text'];
+                   //$linkdataarray->text = $item['text'];
+
+                    $linkdataarray2 = LinkDataArray::where('linkfrom',$item['from'] )->where('linkto',$item['to'] )
+                        ->update(['text'=>$item['text']]);
+
                 } else
 
                 $linkdataarray->linkfrom = $item['from'];
@@ -72,7 +76,7 @@ class flowchartController extends Controller
 
     public function convert(){
 
-        $nodearradata = Nodedataarray::get();
+        $nodearradata = Nodedataarray::where('text' ,'!=','Step')->where('text' ,'!=','???')->get();
 
 //        foreach ($nodearradata as $node){
 //            $text = explode(" ", $node->text);
@@ -91,40 +95,90 @@ class flowchartController extends Controller
 //        }
 
 
+//        foreach ($nodearradata as $no){
+//
+//
+//            $linkdata = LinkDataArray::where('linkto', $no->keyto)->get();
+//
+//            $nodedata = Nodedataarray::where('keyto', $linkdata->first()['linkto'])->get();
+//
+//            foreach ($nodedata as $n ){
+//                echo $n."<br>";
+//            }
+//        }
+
+
+
+
+
+
+
         foreach ($nodearradata as $node) {
 
             $nodedata = $this->checklinkdata($node['keyto']);
-            echo $nodedata = json_decode($nodedata, true);
+             //echo $nodedata."<br>";
+            // echo $nodedata = json_decode($nodedata, true);
+             $linkto =  $nodedata->first()['linkto'];
+            foreach ($nodedata as $n) {
+                //   echo  $n->text."<br>";
 
-             break;
 
 //            //  echo $node->text;
 
-//                if (strpos($node->text, "Declare") !== false) {
-//                    //  echo $node->text;
-//                    $text = explode(" ", $node->text);
-//                    $new = array();
-//                    $arr = array_diff($text, array("Declare", "variables", ",", "and", "variable"));
-//                    //print_r($arr);
-//                    foreach ($arr as $a) {
-//                        $c = "$" . $a;
-//                        array_push($new, $c);
-//                    }
-//
-//                    $string = implode(",", $new);
-//
-//                    $converttext = new Converttext();
-//                    $converttext->text = $string;
-//                   // $converttext->save();
-//
-//                    $linkdata = LinkDataArray::where('linkfrom', $node['keyto'])->get();
-//                    foreach ($linkdata as $l){
-//
-//
-//                    }
-//
-//                }
+                if ($n->category == "step") {
+                    if (strpos($n->text, "Declare") !== false) {
+                        //  echo $node->text;
+                        $text = explode(" ", $n->text);
+                        $new = array();
+                        $arr = array_diff($text, array("Declare", "variables", ",", "and", "variable", "take"));
+                        //print_r($arr);
+                        foreach ($arr as $a) {
+                            $c = "int " . $a;
+                            array_push($new, $c);
+                        }
+
+                        $string = implode(",", $new);
+
+                        try {
+                            $converttext = new Converttext();
+                            $converttext->text = $string;
+                            $converttext->save();
+                        }
+                        catch (\Exception $e){}
+                        //   $linkdata = LinkDataArray::where('linkfrom', $node['keyto'])->get();
+                        //  foreach ($linkdata as $l){
+
+
+                    } else if (strpos($n->text, "Read") !== false){
+                        $text = explode(" ", $n->text);
+                        $new = array();
+                        $arr = array_diff($text, array("Read", "Scan", ",", "and", "variable"));
+                        //print_r($arr);
+                        foreach ($arr as $a) {
+                            $c = 'scanf("%d", &' . $a . ')';
+                            //array_push($new, $c);
+
+
+                            // $string = implode(",", $new);
+                            try {
+                                $converttext = new Converttext();
+                                $converttext->text = $c;
+                                $converttext->save();
+                            }
+                            catch (\Exception $e){}
+                        }
+                    }
+
+                }else if ($n->category == "Conditional") {
+
+
+                    $this->conditional($n);
+
+
+                }
+
             }
+        }
 
 
             echo "<br>";
@@ -134,10 +188,55 @@ class flowchartController extends Controller
         public function checklinkdata ($value){
 
             $linkdata = LinkDataArray::where('linkfrom', $value)->get();
-           // $nodedata = Nodedataarray::where('keyto', $linkdata->linkto)->get();
+            $nodedata = Nodedataarray::where('keyto', $linkdata->first()['linkto'])->get();
 
-            return $linkdata;
+            return $nodedata;
         }
+
+
+
+        public function conditional ($val)
+        {
+
+            if (strpos($val->text, "???") !== false) {
+            } else {
+
+                //  $string = implode(",", $new);
+                try {
+                    $converttext = new Converttext();
+                    $converttext->text = "if (" . $val->text . ") {";
+                    $converttext->save();
+                } catch (\Exception $e) {
+                }
+
+                $linkdatacheck = LinkDataArray::where('linkfrom', $val->keyto)->where('text', "YES")->get();
+                $nodedatacheck = Nodedataarray::where('keyto', $linkdatacheck->first()['linkto'])->get();
+                foreach ($nodedatacheck as $nodecheck) {
+
+                    if ($nodecheck->category == "step") {
+                        if ($nodecheck->text != "Step") {
+
+                              $string = str_replace('Print', '',$nodecheck->text);
+                             // $string = chop($nodecheck->text,"Print");
+                              // $string;
+
+                                try {
+                                    $converttext = new Converttext();
+                                    $converttext->text = $string;
+                                     //  $converttext->save();
+                                } catch (\Exception $e) {
+                                }
+                                //   $linkdata = LinkDataArray::where('linkfrom', $node['keyto'])->get();
+                                //  foreach ($linkdata as $l){
+
+                            }
+
+                        } else {
+                            $this->conditional($nodedatacheck);
+                        }
+                    }
+                }
+            }
 
 
 }
