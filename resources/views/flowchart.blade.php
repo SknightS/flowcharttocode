@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     {{--<script src="../release/go.js"></script>--}}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="{{url('public/GoJS/release/go.js')}}"></script>
 
@@ -341,20 +342,43 @@
             setTimeout(function() { svgWindow.print(); }, 1);
 
         }
+
+        function output() {
+            jQuery.ajax({
+                    type : 'get' ,
+                    url : '{{route('flowchart.convert')}}',
+                    data : {_token: CSRF_TOKEN} ,
+                    success : function(data){
+                        //   alert(data);
+                        console.log(data);
+                        //alert(data);
+
+                        $("#showout").html(data);
+                    }
+                });
+        }
     </script>
 </head>
 <body onload="init()">
-<div id="sample">
-    <div style="width: 100%; display: flex; justify-content: space-between">
+<div id="sample" >
+    <div style="width: 100%" class="row" >
+    <div class="col-md-8" style="width: 70%; display: flex; justify-content: space-between" >
         <div id="myPaletteDiv" style="width: 100px; margin-right: 2px; background-color: whitesmoke; border: solid 1px black"></div>
         <div id="myDiagramDiv" style="flex-grow: 1; height: 750px; border: solid 1px black"></div>
     </div>
+    <div class="col-md-4" style="width: 30%" id="output"> <b>output</b>
+    <div id="showout"></div>
+    </div>
+    </div>
+
     <p>
+
 
     </p>
     <p>
 
     </p>
+    <button style="display: block" id="output" onclick="output()">Convert</button>
     <button style="display: none" id="SaveButton" onclick="save()">Save</button>
     <button style="display: none" onclick="load()">Load</button>
 
